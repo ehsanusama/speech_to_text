@@ -32,6 +32,6 @@ def audio2text(audio_url):
     return jsonify(results)
 
 if __name__ == "__main__":
-   app.run(debug=True, port = int(os.getenv('PORT')))
-   app.run(host="0.0.0.0", port=port)
+    port = int(os.getenv('PORT', 5000))  # Use default value 5000 if PORT is not set
+    app.run(host="0.0.0.0", port=port)
 
