@@ -1,8 +1,9 @@
+import logging
 import speech_recognition as sr
 import requests
 from io import BytesIO
 from flask import Flask, jsonify
-
+logging.basicConfig(filename='app.log', level=logging.DEBUG)
 app = Flask(__name__)
 
 @app.route('/audio_text/<path:audio_url>')
