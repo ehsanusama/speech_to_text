@@ -5,7 +5,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/audio&text/<path:audio_url>')
+@app.route('/audio_text/<path:audio_url>')
 
 def audio2text(audio_url):
     response = requests.get(audio_url)
