@@ -1,4 +1,5 @@
 import logging
+import os
 import speech_recognition as sr
 import requests
 from io import BytesIO
@@ -31,4 +32,4 @@ def audio2text(audio_url):
     return jsonify(results)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+   app.run(debug=True, port=os.environ.get('PORT', 5000))
