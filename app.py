@@ -7,8 +7,8 @@ from flask import Flask, jsonify
 logging.basicConfig(filename='app.log', level=logging.DEBUG)
 #g
 app = Flask(__name__)
-@app.route('/audio_text/<path:audio_url>')
-
+@app.route('/<path:audio_url>')
+#/audio_text
 def audio2text(audio_url):
     response = requests.get(audio_url)
     audio_data = BytesIO(response.content)
